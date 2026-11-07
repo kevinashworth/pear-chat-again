@@ -1,10 +1,14 @@
 {
   "name": "pear-chat",
   "version": "1.0.0",
-  "main": "src/electron/main.js",
   "type": "commonjs",
+  "main": "src/electron/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "b4a": "^1.6.7",
@@ -12,6 +16,8 @@
     "pear-runtime": "^1.1.4"
   },
   "devDependencies": {
-    "electron": "42.11.18"
+    "electron": "42.11.18",
+    "oxfmt": "0.72.0",
+    "oxlint": "1.87.0"
   }
 }
