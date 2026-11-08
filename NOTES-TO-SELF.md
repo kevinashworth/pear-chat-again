@@ -32,3 +32,66 @@ eza --long --header --icons --git --all
 eza --long --header --icons --git --all --git-ignore
 npm start -- --storage /tmp/pear-chat-user1 --name user1
 npm start -- --storage /tmp/pear-chat-user2 --name user2 --invite CODEGOESHERE
+
+## Step 3
+
+Follow along with [Touch, set the upgrade link, and seed](https://docs.pears.com/p2p/getting-started/build-a-peer-to-peer-chat/ship/#touch-set-the-upgrade-link-and-seed):
+
+I have a version of Pear Chat running on Mascot and another one running on kMBA. I suppose that is what to do first?
+
+1. I ran:
+
+```zsh
+pear touch
+```
+
+Result:
+
+```text
+pear://y55qf5xo818ygibi787mif35phg1ofn9rxexca1gnjnwjxc335zy
+
+Deployment operations
+  stage      Local/dev checks, unsigned builds, branches, throwaways
+  provision  Prerelease, stakeholder preview, QA, or dogfooding
+  multisig   Production, stakeholder multisig, machine-independent
+
+
+Use the link above
+  $ pear stage --dry-run pear://y55qf5xo818ygibi787mif35phg1ofn9rxexca1gnjnwjxc335zy <dir>
+```
+
+2. Then I ran:
+
+```zsh
+npm pkg set upgrade=pear://y55qf5xo818ygibi787mif35phg1ofn9rxexca1gnjnwjxc335zy
+```
+
+There was on command-line output but `package.json`'s `upgrade` was changed to the above.
+
+3. Then I ran:
+
+```zsh
+pear seed pear://y55qf5xo818ygibi787mif35phg1ofn9rxexca1gnjnwjxc335zy
+```
+
+I left it running. Its output was approximately:
+
+```text
+Seeding:         pear://y55qf5xo818ygibi787mif35phg1ofn9rxexca1gnjnwjxc335zy
+Verlink:         pear://0.0.y55qf5xo818ygibi787mif35phg1ofn9rxexca1gnjnwjxc335zy
+App:             -
+Drive Length:    0   [100%]
+Blobs Length:    0/0 [  0%]
+Blobs Size:      0B
+Discovery Key:   9jwmmwgw9qwje4me6tteak6uj5rnr8tjqp4tz6ubbcn7mxa7wawo
+Content Key:     pending
+Firewalled:      true
+NAT Type:        consistent
+Whoami:          zibjoe1hip3zdh7kj8yahzkdixyrs965sbwjadsfgm6u5ckjajhy
+Uptime:          30s
+Network:         [ Peers 0 ]  [ ⬆ 0B - 0B/s ]  [ ⬇ 0B - 0B/s ]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+^_^ announced
+```
+
+What do I do now? I guess I run `npm version patch`. I have to commit changes above plus to package.json first.
