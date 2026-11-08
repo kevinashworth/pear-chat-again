@@ -4,3 +4,4 @@ node_modules/
 # Generated / build output
 /out/
 /src/renderer/build/
+/spec/

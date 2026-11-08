@@ -2,9 +2,9 @@ const Hyperschema = require("hyperschema");
 const HyperdbBuilder = require("hyperdb/builder");
 const Hyperdispatch = require("hyperdispatch");
 
-const SCHEMA_DIR = "./src/spec/schema";
-const DB_DIR = "./src/spec/db";
-const DISPATCH_DIR = "./src/spec/dispatch";
+const SCHEMA_DIR = "./spec/schema";
+const DB_DIR = "./spec/db";
+const DISPATCH_DIR = "./spec/dispatch";
 
 const hyperSchema = Hyperschema.from(SCHEMA_DIR);
 const schema = hyperSchema.namespace("pear-chat");

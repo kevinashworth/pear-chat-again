@@ -8,7 +8,7 @@
   "main": "src/electron/main.js",
   "scripts": {
     "clean": "rm -rf src/renderer/build",
-    "build:db": "node src/schema.js",
+    "build:db": "node schema.js",
     "build:tailwind": "npx @tailwindcss/cli -i src/input.css -o src/renderer/build/output.css",
     "build": "npm run build:db && npm run build:tailwind",
     "start": "electron-forge start -- --no-updates",

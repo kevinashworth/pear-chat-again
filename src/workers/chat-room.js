@@ -5,8 +5,8 @@ const HyperDB = require("hyperdb");
 const ReadyResource = require("ready-resource");
 const z32 = require("z32");
 
-const ChatDispatch = require("../spec/dispatch");
-const ChatDb = require("../spec/db");
+const ChatDispatch = require("../../spec/dispatch");
+const ChatDb = require("../../spec/db");
 
 class ChatRoom extends ReadyResource {
   constructor(store, swarm, invite) {
