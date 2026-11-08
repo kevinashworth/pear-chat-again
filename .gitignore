@@ -1,6 +1,6 @@
 node_modules/
 .DS_Store
 
-# Build artifacts
-build/
-out/
+# Generated / build output
+/out/
+/src/renderer/build/
