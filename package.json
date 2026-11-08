@@ -1,6 +1,6 @@
 {
   "name": "pear-chat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A peer-to-peer desktop chat built on the hello-pear-electron shell",
   "license": "Apache-2.0",
   "author": "KA",
