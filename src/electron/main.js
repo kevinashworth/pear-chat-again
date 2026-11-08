@@ -55,7 +55,10 @@ function parseArgs(argv) {
   return { pearStore, updates, passthroughArgs: passthrough };
 }
 
-if (pearStore) app.setPath("userData", pearStore);
+if (pearStore) {
+  app.setPath("userData", pearStore);
+  console.log("pear store: " + pearStore);
+}
 
 ipcMain.on("pkg", (evt) => {
   evt.returnValue = pkg;
@@ -73,7 +76,6 @@ function getAppPath() {
 function getStorageDir() {
   const appPath = getAppPath();
   if (pearStore) {
-    console.log("pear store: " + pearStore);
     return pearStore;
   }
   if (appPath === null) {
@@ -192,9 +194,9 @@ async function createWindow() {
     },
   });
 
-  win.webContents.on("console-message", (evt, level, message, _line, _sourceId) => {
-    const levels = ["log", "warn", "error"];
-    console.log(`[renderer ${levels[level] || level}] ${message}`);
+  win.webContents.on("console-message", (event) => {
+    const level = event.level === "info" ? "log" : event.level;
+    console.log(`[renderer ${level}] ${event.message}`);
   });
   win.webContents.on("render-process-gone", (evt, details) => {
     console.error("[renderer] gone:", details);
