@@ -46,6 +46,8 @@ class WorkerTask extends ReadyResource {
 
     // Push the room invite so the renderer can show its "copy invite" button.
     this.pipe.write(JSON.stringify({ type: "invite", invite: await this.room.getInvite() }));
+    // Push the command-line name so the renderer can label the local user.
+    this.pipe.write(JSON.stringify({ type: "name", name: this.name }));
     await this.debounceMessages();
   }
 

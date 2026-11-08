@@ -7,6 +7,7 @@ const messagesEl = document.getElementById("messages");
 const emptyEl = document.getElementById("empty");
 const peersEl = document.getElementById("peers");
 const dotEl = document.getElementById("dot");
+const usernameEl = document.getElementById("username");
 const versionEl = document.getElementById("version");
 const updateEl = document.getElementById("update");
 const copyEl = document.getElementById("copy-invite");
@@ -108,6 +109,7 @@ const offWorkerIPC = bridge.onWorkerIPC(SPECIFIER, (data) => {
   }
   if (message.type === "messages") renderMessages(message.messages);
   else if (message.type === "peers") renderPeers(message.count);
+  else if (message.type === "name") usernameEl.textContent = message.name;
   else if (message.type === "invite") {
     invite = message.invite;
     copyEl.disabled = false;

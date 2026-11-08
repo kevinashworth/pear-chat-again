@@ -3,16 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self';" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self';"
+    />
     <title>Pear Chat</title>
     <link href="./build/output.css" rel="stylesheet" />
   </head>
 
   <body class="bg-neutral-950 text-neutral-100 h-screen flex flex-col font-sans antialiased">
     <header class="px-6 py-4 border-b border-neutral-900 flex items-center justify-between gap-4">
-      <div class="flex items-center gap-2.5">
+      <div class="flex items-baseline gap-2.5">
         <img src="pear.svg" class="h-5 w-auto" alt="Pear logo" aria-hidden="true" />
         <h1 class="text-base font-medium tracking-tight">Pear Chat</h1>
+        <div class="text-sm text-neutral-200" id="username">Username</div>
         <span id="version" class="text-xs text-neutral-600"></span>
         <button
           id="update"
