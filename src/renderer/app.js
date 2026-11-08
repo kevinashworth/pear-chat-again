@@ -20,7 +20,9 @@ let invite = null;
 versionEl.textContent = "v" + bridge.pkg().version;
 
 function renderMessages(messages) {
-  for (const node of messagesEl.children) {
+  // children is a live collection, so snapshot it before removing nodes.
+  const childElements = Array.from(messagesEl.children);
+  for (const node of childElements) {
     if (node !== emptyEl) node.remove();
   }
   emptyEl.style.display = messages.length === 0 ? "" : "none";
