@@ -17,8 +17,18 @@ When I decided to add a `src` folder, the 2 side-by-side instances of the Pear C
 
 I see that there are 3 bootstrap IP addresses that the Hyperswarm might ping. https://github.com/holepunchto/hyperdht/blob/fe0c9707f1b9fa5def9b4a7308f559aa0bbab84b/lib/constants.js#L17-L21
 
-I'm continuing to use my `src` directory, so making several changes as I begin part 2. It should work, but it means I'm doing more work than blindly following along. Should help me learn more, no? And I think I'll ensure the `spec` folder is in `src`, too, and commit it after `npm run build`.
+I'm continuing to use my `src` directory, so making several changes as I begin part 2. It should work, but it means I'm doing more work than blindly following along. Should help me learn more, no?
 
 The alias I have been using in `~/.zshrc` (npm = npq-hero) led to some weird bugs. I changed that alias. (Hmm ... a bigger concern than this project, but that gets part 2 of Getting Started working again.)
 
 I made small changes, such as adding username to the header.
+
+2026-11-08
+
+LLM: "The only real cost of the current layout is that src/workers/chat-room.js depends on something outside src. That works today because Forge packages the whole project, but it would break if you ever added a bundler or packaging filter scoped to src/. Worth a comment or a note in the README."
+
+Commands I am using in this dir:
+eza --long --header --icons --git --all
+eza --long --header --icons --git --all --git-ignore
+npm start -- --storage /tmp/pear-chat-user1 --name user1
+npm start -- --storage /tmp/pear-chat-user2 --name user2 --invite CODEGOESHERE
