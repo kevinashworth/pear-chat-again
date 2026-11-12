@@ -95,3 +95,13 @@ Network:         [ Peers 0 ]  [ ⬆ 0B - 0B/s ]  [ ⬇ 0B - 0B/s ]
 ```
 
 What do I do now? I guess I run `npm version patch`. I have to commit changes above plus to package.json first.
+
+And then, since I seem to have all the other files listed on this page, I ran
+
+```zsh
+npm run make
+```
+
+The output didn't change for 30 minutes or so, and I typed ctrl-C, and tried again.
+
+After some chat with LLM, determined it was an `npm install` issue due to using `npq` and install scripts not running. Reinstalled and the `make` command completed. Adding an `.npmrc` file to this repo with ignore-scripts=false`. I am not liking having to undo these security steps, but for now it seems the way to go.
