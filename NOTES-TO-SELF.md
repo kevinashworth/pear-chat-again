@@ -1,4 +1,4 @@
-# Pear Chat - Notes to self
+# Pear Chat - Notes to self - pear-chat-again
 
 ## Getting Started
 
@@ -105,3 +105,12 @@ npm run make
 The output didn't change for 30 minutes or so, and I typed ctrl-C, and tried again.
 
 After some chat with LLM, determined it was an `npm install` issue due to using `npq` and install scripts not running. Reinstalled and the `make` command completed. Adding an `.npmrc` file to this repo with ignore-scripts=false`. I am not liking having to undo these security steps, but for now it seems the way to go.
+
+2026-11-12
+
+Coming back after a few days.
+
+1. Committed changes to kevin/part-3 ... might push soon
+2. Ran `pear seed [...]` as above
+3. Opened `PearChat.app` in Mascot's `Applications` folder, and saw a `peer join` event on the still-running `pear seed`
+4. Went to kMBA ... oh yeah, I did a bunch here due to install scripts blocked messages from npm ... will push & merge & pull to deal with this
