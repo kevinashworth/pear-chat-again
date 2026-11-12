@@ -1,6 +1,6 @@
 {
   "name": "pear-chat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A peer-to-peer desktop chat built on the hello-pear-electron shell",
   "license": "Apache-2.0",
   "author": "KA",
@@ -60,5 +60,5 @@
     "tailwindcss": "4.3.3"
   },
   "productName": "PearChat",
-  "upgrade": "pear://qxenz5wmspmryjc13m9yzsqj1conqotn8fb4ocbufwtz9mtbqq5o"
+  "upgrade": "pear://y55qf5xo818ygibi787mif35phg1ofn9rxexca1gnjnwjxc335zy"
 }
